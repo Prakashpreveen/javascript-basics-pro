@@ -1,0 +1,125 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      // BOOLEAN METHOD:
+      console.log(3 < 5); //True
+      console.log(10 < 9); //False
+
+      console.log(10 == "10.00"); //True
+      console.log(10 == "10"); //True
+      console.log(10 == 10); //True
+
+      console.log(10 === "10.00"); //False
+      console.log(10 === "10"); //False
+      console.log(10 === 10); //True
+      //<!---------------------------------------------------------------------------------------------------------------->
+
+      // IF ELSE STATEMENT
+
+      // IF STATEMENT
+      if (true) {
+        console.log("Yes"); //Yes
+      }
+
+      if (false) {
+        console.log("No"); //No Result
+      }
+
+      // IF ELSE STATEMENT
+      if (true) {
+        console.log("Yes");
+      } else {
+        console.log("No");
+      } //Yes
+
+      if (false) {
+        console.log("Yes");
+      } else {
+        console.log("No");
+      } //Yes
+
+      //PRACTICAL EXAMPLE
+
+      // IF ELSE STATEMENT
+      if (18 >= 30) {
+        console.log("You are not Allowed to Drive");
+      } else {
+        console.log("Allowed to Drive");
+      } //Allowed to Drive
+
+      if (35 >= 30) {
+        console.log("You are not Allowed to Drive");
+      } else {
+        console.log("Allowed to Drive");
+      } //You are not Allowed to Drive
+
+      // IF ELSEIF ELSE STATEMENT
+      const i = 18;
+
+      if (i >= 16) {
+        console.log("Yes you are Elligible");
+      } else if (i <= 16) {
+        console.log("Almost there!!");
+      } else {
+        console.log("Not Elligible");
+      } //Yes you are Elligible
+
+      //<!---------------------------------------------------------------------------------------------------------------->
+
+      //OPERATORS:
+
+      // AND OPERATOR
+      console.log(true && true); //True
+      console.log(true && false); //False
+
+      console.log(0.2 >= 0 && 0.2 <= 1 / 3); //True
+
+      // OR OPERATOR
+      console.log(true || true); //True
+      console.log(true || false); //True
+      console.log(false || false); //False
+
+      console.log(!true); //False //Not Operator
+
+      //<!---------------------------------------------------------------------------------------------------------------->
+
+      //TRUELY FALSELY
+      // <-- 0, '', False, NaN, undefined, null --> FALSELY VALUES
+      // OTHER THAN FALSELY VALUES EVERYTHING IS TRUELY
+      if (5) {
+        console.log("Truely");
+      } //Truley
+
+      if (0) {
+        console.log("Truely");
+      } // No Result [Falsely]
+
+      // REALTIME EXAMPLE
+      const cartValue = 10;
+
+      if (cartValue) {
+        console.log("Item in Cart");
+      }
+
+      console.log(!0); // True
+      console.log("text" / 5);
+      let variables11;
+      console.log(variables11);
+
+      //   EASY IF ELSE CONDITION
+      const result = 0 ? "yes" : "No";
+      console.log(result); //No
+
+      // GUARD OPERATOR
+      false && console.log("hello"); //No Result
+      true && console.log("hello"); //hello
+
+      //<!---------------------------------------------------------------------------------------------------------------->
+    </script>
+  </body>
+</html>

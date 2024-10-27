@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>website</title>
+    <style>
+      .cart-btn {
+        font-size: 1.5rem;
+        padding: 10px;
+        background: yellow;
+        color: black;
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 1rem;
+      }
+      .buy-btn {
+        font-size: 1.5rem;
+        padding: 10px;
+        background: orange;
+        color: black;
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      onclick="
+        alert(`Adults Plain Cotton T-shirt \n Price: $7.99`);
+        "
+      class="cart-btn"
+    >
+      Add to cart
+    </button>
+
+    <button
+      onclick="
+        console.log('Loading...');
+        alert('Purchased');
+    "
+      class="buy-btn"
+    >
+      Buy now
+    </button>
+
+    <script>
+      console.log(2 + 2);
+      console.log("Some" + "String");
+    </script>
+  </body>
+</html>
