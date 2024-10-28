@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM PROJECTS</title>
+    <style>
+      .yt-btn {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button class="yt-btn" onclick="Subscribe()">Subscribe</button>
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <p>Rock Paper Scissor</p>
+    <a
+      href="http://127.0.0.1:5500/rock-paper-scissor%20game/rock-paper-scissor.html#"
+      >Click here</a
+    >
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <script>
+      function Subscribe() {
+        const buttonElement = document.querySelector(".yt-btn");
+
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+        }
+      }
+    </script>
+  </body>
+</html>

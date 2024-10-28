@@ -1,4 +1,24 @@
 
+let score = JSON.parse(localStorage.getItem('score')) || {
+    wins : 0,
+    losses : 0,
+    tie : 0
+};
+
+document.querySelector('.js-score')
+    .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Tie: ${score.tie}`;
+
+/*
+if (score === null) {
+    score ={
+        wins : 0,
+        losses : 0,
+        tie : 0
+    };
+}
+*/
+
+
 let computerMove = "";
 
 function pickComputerMove() {
@@ -50,5 +70,20 @@ function playGame(playerMove) {
         return; // Exit the function on invalid input
     }
 
-    alert(`You Picked ${playerMove}.\nComputer Picked ${computerMove}.\n${result}`);
+    if(result === 'You Win.') {
+        score.wins += 1;
+    } else if(result === 'You Lose.') {
+        score.losses += 1;
+    } else {
+        score.tie += 1;
+    }
+
+    //Save the score using local storage for permenent record:
+    localStorage.setItem('score' ,JSON.stringify(score));
+
+    document.querySelector('.js-score')
+    .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Tie: ${score.tie}`;
+
+    // alert(`You Picked ${playerMove}. Computer Picked ${computerMove}. ${result}\nWins: ${score.wins}, Losses: ${score.losses}, Tie: ${score.tie}`);
+
 }

@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>Hello</button>
+    <buttton class="snd-btn">There</buttton>
+    <script>
+      console.log(document.querySelector("button")); //selecting the particular query
+      console.log(document.querySelector("button").innerHTML); //getting the innerHTML details
+      document.querySelector("button").innerHTML = "Changed"; //changing the innerHTML details
+      /*
+      console.log(document.title);
+      document.title = "changed;";
+
+      console.log(document.body);
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+      console.log(typeof document.body.innerHTML);
+      document.body.innerHTML = "Welcome";
+
+      document.body.innerHTML = "<button> Hello </button>";
+      */
+    </script>
+  </body>
+</html>

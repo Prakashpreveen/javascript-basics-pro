@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      // Objects:
+      //Example-1
+
+      const product = {
+        name: "shoe",
+        price: 800,
+      };
+
+      console.log(typeof product);
+      console.log(product);
+      console.log(product.name);
+      product.name = "T-shirt";
+      console.log(product.name);
+      product.size = "XL";
+      console.log(product);
+      delete product.size;
+      console.log(product);
+
+      //Example-2
+      const product1 = {
+        name: "shirt",
+        "brand-type": "adidas",
+        rating: {
+          stars: 4.5,
+          count: 78,
+        },
+        // Even function is an type of object
+        fun: function function1() {
+          console.log("function inside object");
+        },
+      };
+
+      console.log(product1);
+      console.log(product1["brand-type"]); // use bracket notation []
+      console.log(product1.rating.stars); // use dot notation .
+      product1.fun();
+
+      console.log(typeof console); //object
+      console.log(typeof console.log); //function
+
+      console.log(JSON.stringify(product1)); //Change the format jvs [Object] to JSON [String]
+      const jsonString = JSON.stringify(product1);
+      console.log(typeof jsonString);
+
+      console.log(JSON.parse(jsonString)); //Change the format JSON [String] to jvs [Object]
+      jsonObject = JSON.parse(jsonString);
+      console.log(typeof jsonObject);
+
+      console.log(localStorage.getItem("message"));
+      localStorage.setItem("message", "hello");
+
+      // even console we can use dot notation
+      console.log("hello".length);
+      console.log("hello".toUpperCase());
+
+      //Objects References
+      const object = {
+        message: "hello",
+      };
+      console.log(object); //object is an reference
+
+      const object1 = object; //reference copy of object
+
+      object1.message = "good work"; //can able to change the const value bcz of object
+      console.log(object); //even thou i changed object1 all same reference will be change [object]
+      console.log(object1);
+
+      const object2 = {
+        message: "good work",
+      };
+      console.log(object2 === object1); //Both have same value in ity but different references
+      console.log(object === object1); //Both have same reference (L70)
+
+      //Destructuring
+      const object3 = {
+        message: "shirt",
+        price: 799,
+      };
+
+      const { message, price } = object3; //geting the value outside object using variables
+
+      console.log(message);
+      console.log(price);
+
+      const objects = {
+        // message : message
+        message,
+      };
+      console.log(objects);
+    </script>
+  </body>
+</html>

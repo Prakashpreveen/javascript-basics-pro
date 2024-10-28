@@ -28,9 +28,23 @@
   <body>
     <p>Rock Paper Scissor Game!!</p>
 
-    <button onclick="playGame('rock');">Rock</button>
-    <button onclick="playGame('paper');">Paper</button>
-    <button onclick="playGame('scissor');">Scissor</button>
+    <button onclick="playGame('rock'); console.log(score);">Rock</button>
+    <button onclick="playGame('paper');console.log(score);">Paper</button>
+    <button onclick="playGame('scissor'); console.log(score);">Scissor</button>
+
+    <p style="font-size: 1rem" class="js-score"></p>
+
+    <button
+      onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.tie = 0;
+      localStorage.removeItem('score');
+      console.log(score);
+    "
+    >
+      Reset Scores
+    </button>
 
     <p style="font-size: 1rem">
       <a href="#">Click Here</a> to see final version of the project.
