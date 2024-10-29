@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+  </head>
+  <style>
+    .btn {
+      font-size: 2rem;
+      padding: 1rem;
+      margin-top: 2rem;
+      margin-left: 2rem;
+      margin-bottom: 3rem;
+    }
+    p {
+      font-size: 1.5rem;
+      margin-left: 7rem;
+    }
+    .inputbar {
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+    }
+    .submit {
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+    }
+    .bar {
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+    }
+  </style>
+  <body>
+    <input
+      type="text"
+      class="inputbar"
+      placeholder="Enter Your Name"
+      onkeydown="enterKeydown();"
+    />
+    <button class="submit" onclick="submitAction()">Submit</button>
+    <p class="name"></p>
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+    <button class="btn" onclick="resultHeader('Heads')">Heads</button>
+    <button class="btn" onclick="resultHeader('Tails')">Tails</button>
+    <p class="event-example"></p>
+    <p class="result"></p>
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+    <input
+      type="text"
+      class="bar"
+      placeholder="Type Something"
+      oninput="activateBar();"
+    />
+    <p class="text-active"></p>
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+    <script>
+      function submitAction() {
+        inputValue = document.querySelector(".inputbar").value;
+
+        document.querySelector(
+          ".name"
+        ).innerHTML = `Your Name is ${inputValue}`;
+      }
+
+      function enterKeydown() {
+        if (event.key === "Enter") {
+          submitAction();
+        }
+      }
+
+      console.log(event);
+      // ------------------------------------------------------------------------------------------------------------
+      function resultHeader(choice) {
+        choice;
+
+        document.querySelector(".result").innerHTML = `You Chose ${choice}`;
+      }
+
+      // ----------------------------------------------------------------------------------------------------------------------------
+      function activateBar() {
+        repeat = document.querySelector(".bar").value;
+
+        document.querySelector(".text-active").innerHTML = `${repeat}`;
+      }
+    </script>
+  </body>
+</html>

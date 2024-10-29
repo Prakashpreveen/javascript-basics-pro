@@ -5,7 +5,13 @@
     <title>DOM PROJECTS</title>
     <style>
       .yt-btn {
+        margin-bottom: 3rem;
+      }
+      a {
         margin-bottom: 20px;
+      }
+      p {
+        font-size: 1rem;
       }
     </style>
   </head>
@@ -14,10 +20,20 @@
     <button class="yt-btn" onclick="Subscribe()">Subscribe</button>
     <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <p>Rock Paper Scissor</p>
-    <a
-      href="http://127.0.0.1:5500/rock-paper-scissor%20game/rock-paper-scissor.html#"
-      >Click here</a
-    >
+    <a href="../dom-project/dom-rock-paper-scissor.html">Click here</a>
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <p style="margin-top: 3rem">Amazon Shipping Calculator</p>
+    <p>Order under $40, Shipping fee $10</p>
+    <p>Order over $40, Shippping Free</p>
+    <input
+      class="input-bar"
+      type="text"
+      placeholder="Enter the Price in Dollars"
+      onkeydown="keyDown(event)"
+    />
+    <button class="az-btn" onclick="calculatingValue();">Calculate</button>
+
+    <p class="total-cost"></p>
     <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script>
       function Subscribe() {
@@ -27,6 +43,23 @@
           buttonElement.innerHTML = "Subscribed";
         } else {
           buttonElement.innerHTML = "Subscribe";
+        }
+      }
+
+      function calculatingValue() {
+        let inputElement = document.querySelector(".input-bar");
+        inputValue = Number(inputElement.value);
+
+        if (inputValue < 40) {
+          inputValue += 10;
+        }
+
+        document.querySelector(".total-cost").innerHTML = `${inputValue}`;
+      }
+
+      function keyDown(event) {
+        if (event.key === "Enter") {
+          calculatingValue();
         }
       }
     </script>

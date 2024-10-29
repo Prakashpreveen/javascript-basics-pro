@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>attach</title>
+    <title>Rock Paper Scissor Game</title>
   </head>
   <style>
     p {
@@ -28,9 +28,12 @@
   <body>
     <p>Rock Paper Scissor Game!!</p>
 
-    <button onclick="playGame('rock'); console.log(score);">Rock</button>
-    <button onclick="playGame('paper');console.log(score);">Paper</button>
-    <button onclick="playGame('scissor'); console.log(score);">Scissor</button>
+    <button onclick="playGame('rock');">Rock</button>
+    <button onclick="playGame('paper');">Paper</button>
+    <button onclick="playGame('scissor');">Scissor</button>
+
+    <p style="font-size: 1rem; padding: 20px 0" class="rslt"></p>
+    <!-- This will display the result -->
 
     <p style="font-size: 1rem" class="js-score"></p>
 
@@ -41,13 +44,13 @@
       score.tie = 0;
       localStorage.removeItem('score');
       updateScoreElement();
+      document.querySelector('.rslt').innerHTML = ''; // Clear result display
       console.log(score);
     "
     >
       Reset Scores
     </button>
-    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <!-- JavaScript Source Link -->
+
     <script>
       let score = JSON.parse(localStorage.getItem("score")) || {
         wins: 0,
@@ -55,7 +58,7 @@
         tie: 0,
       };
 
-      // Move updateScoreElement function outside of playGame
+      // Function to update the score display
       function updateScoreElement() {
         document.querySelector(
           ".js-score"
@@ -64,7 +67,6 @@
 
       updateScoreElement(); // Call this to initialize display
 
-      // --------------------------------------------------------------------------------------------------------------------------------------------------------
       let computerMove = "";
 
       function pickComputerMove() {
@@ -82,7 +84,7 @@
       function playGame(playerMove) {
         pickComputerMove(); // Call the function to set computerMove
 
-        let result = "";
+        let result = ""; // Declare result variable here
 
         // Normalize playerMove to handle case sensitivity
         playerMove = playerMove.toLowerCase();
@@ -116,6 +118,7 @@
           return; // Exit the function on invalid input
         }
 
+        // Update scores based on the result
         if (result === "You Win.") {
           score.wins += 1;
         } else if (result === "You Lose.") {
@@ -123,11 +126,16 @@
         } else {
           score.tie += 1;
         }
-        // ------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //Save the score using local storage for permenent record:
+
+        // Save the score using local storage for permanent record:
         localStorage.setItem("score", JSON.stringify(score));
 
-        updateScoreElement();
+        updateScoreElement(); // Update the score display
+
+        // Update the result display
+        document.querySelector(
+          ".rslt"
+        ).innerHTML = `Result: ${result} | Computer chose ${computerMove}.`;
       }
     </script>
   </body>
