@@ -3,13 +3,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo-List</title>
+    <link rel="stylesheet" href="todo-list.css" />
   </head>
   <body>
     <p>Todo List 1</p>
-    <input type="text" class="todo1-input" placeholder="Todo Name" />
-    <button class="todo1-btn" onclick="addTodo1();">Add</button>
 
-    <!-- -------------------------------------------------------------------------------- -->
+    <div class="main-input-grid">
+      <input
+        type="text"
+        class="todo-input main-input"
+        placeholder="Todo Name"
+      />
+      <input type="date" class="js-duedate-input main-date" />
+      <button class="todo-btn main-btn" onclick="addTodo();">Add</button>
+    </div>
+    <div class="js-todo-list todo-grid"></div>
+
+    <!-- ---------------------------------------------------------------------------------------------------------- -->
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
     <script src="todo-list.js"></script>
   </body>
 </html>
