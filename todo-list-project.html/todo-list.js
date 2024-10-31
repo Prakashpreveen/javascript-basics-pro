@@ -1,11 +1,4 @@
-const todoList = [{
-   name : 'finish java',
-   dueDate : '2024-10-31'
-},
-{
-   name : 'start react',
-   dueDate : '2024-10-31'
-}]; 
+const todoList = []; 
 
 
 function renderTodoList() {
@@ -19,9 +12,8 @@ function renderTodoList() {
       const html = `
          <div>${name}</div>
          <div>${dueDate}</div>
-         <button onclick="todoList.splice(${i},1);
-            renderTodoList();
-         " class="delete-btn">Delete
+         <button 
+         " class="delete-btn js-delete-btn">Delete
          </button>
       `;
       todoListHTML += html;
@@ -29,7 +21,19 @@ function renderTodoList() {
 
    document.querySelector('.js-todo-list').
       innerHTML = todoListHTML;
+
+   document.querySelectorAll('.js-delete-btn')
+      .forEach((deletebtn,index) => {
+         deletebtn.addEventListener('click',() => {
+            todoList.splice(index,1);
+            renderTodoList();
+         });
+      })
 }
+
+document.querySelector('.main-btn').addEventListener('click',() => {
+   addTodo();
+});
 
 function addTodo() {
    inputElement = document.querySelector('.todo-input');

@@ -1,0 +1,125 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Function</title>
+  </head>
+  <body>
+    <button onclick="" class="js-btn">Click</button>
+    <script>
+      const btns = document.querySelector(".js-btn");
+
+      btns.addEventListener("click", () => {
+        //Instead of using onclick="" use addEventlistener
+        console.log("click");
+      });
+      btns.addEventListener("click", () => {
+        //Instead of using onclick="" use addEventlistener
+        console.log("click1");
+      });
+      function greeting() {
+        console.log("hello");
+      }
+      greeting(); //Normal function method
+
+      const greeting1 = function () /*greet*/ {
+        //Anonymous Function
+        console.log("hello u");
+      };
+      console.log(greeting1); //It'll show the function in the variable in console
+      greeting1(); //No need for greet function in L14
+
+      const object1 = {
+        //Called Method
+        num: 2,
+        fun: function () /*greet1*/ {
+          console.log("hello there");
+        },
+      };
+      object1.fun();
+
+      function run(para) {
+        para();
+      }
+      run(function () {
+        //CallBack Function
+        console.log("hi there");
+      });
+
+      settimeout();
+      // Asynchronous Code
+      setTimeout(function () {
+        // [won't wait for 3s to run next code]
+        console.log("timeout");
+      }, 3000); //After 3 sec result will be shown in console
+
+      console.log("next line");
+
+      //setinterval()
+      setInterval(function () {
+        console.log("interval");
+      }, 3000);
+
+      // best way to loop for array:
+      ["make dinner", "wash dishes", "watch netflix"].forEach(function (
+        value,
+        index
+      ) {
+        if (value === "wash dishes") {
+          return;
+        }
+
+        console.log(index);
+        console.log(value);
+      });
+
+      //Arrow Functions:
+      //Normal function--
+      const normalFunction = function (param1, param2) {
+        console.log("Normal Function");
+      };
+      normalFunction();
+
+      //Arrow Function-- Recommended:
+      const arrowFunction = (param1, param2) => {
+        console.log("Arrow Function");
+      };
+      arrowFunction();
+
+      //eg:
+      const oneparam = (param) => {
+        console.log(param + 1);
+      };
+      oneparam(99);
+
+      //instead of L52 Loop we can use arrow function:
+      ["make dinner", "wash dishes", "watch netflix"].forEach(
+        (index, value) => {
+          console.log(index);
+          console.log(value);
+        }
+      );
+
+      //Filter Method:
+      console.log(
+        [1, -3, 5].filter((value, index) => {
+          // if (value >= 0) {
+          //   return true;
+          // } else {
+          //   return false;
+          // }
+          return value >= 0;
+        })
+      );
+
+      //Map Function:
+      console.log(
+        [1, 1, 3].map((value, index) => {
+          return value * 2;
+        })
+      );
+
+      console.log([1, 3, 5].map((value) => value * 2));
+    </script>
+  </body>
+</html>
